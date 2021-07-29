@@ -317,4 +317,9 @@ router.get('/delete/:id', (req, res, next) => {
         res.redirect('/tournaments');
     });
 });
+router.get('/login', DisplayLoginPage);
+router.post('/login', ProcessLoginPage);
+router.get('/register', DisplayRegisterPage);
+router.post('/register', ProcessRegisterPage);
+router.get('/logout', ProcessLogoutPage);
 //# sourceMappingURL=tournaments.js.map
