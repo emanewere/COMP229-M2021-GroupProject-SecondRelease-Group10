@@ -9,7 +9,7 @@
 import createError from 'http-errors';
 import app from './Server/Config/app';
 import debug from 'debug';
-debug('comp308-m2021-firstrelease:server');
+debug('comp308-m2021-firstreleas:server');
 import http from 'http';
 
 /**
