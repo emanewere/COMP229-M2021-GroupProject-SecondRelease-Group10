@@ -79,17 +79,6 @@ app.use(session({
 // initialize flash
 app.use(flash());
 
-// initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-// implement an Auth Strategy
-passport.use(User.createStrategy());
-
-// serialize and deserialize user data
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
 // route redirects
 app.use('/', index);
 app.use('/tournaments',tournaments);
