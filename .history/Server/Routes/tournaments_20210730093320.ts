@@ -53,8 +53,7 @@ router.get('/landing', (req, res, next) =>
         title: 'Tournaments',
         page: 'tournaments',
         tournaments: tournaments, 
-        displayName: UserDisplayName(req),
-        userName: UserName(req)
+        displayName: UserDisplayName(req)
 
       });
     }

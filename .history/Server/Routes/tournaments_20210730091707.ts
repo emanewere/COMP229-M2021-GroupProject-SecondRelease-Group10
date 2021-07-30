@@ -53,8 +53,7 @@ router.get('/landing', (req, res, next) =>
         title: 'Tournaments',
         page: 'tournaments',
         tournaments: tournaments, 
-        displayName: UserDisplayName(req),
-        userName: UserName(req)
+        displayName: UserDisplayName(req)
 
       });
     }
@@ -132,7 +131,7 @@ router.get('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next) 
        if(match === "eight")
        {
            //Renders the edit a bracket page
-       res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req),userName: UserName(req)});
+       res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
        }
        else
        {
@@ -495,7 +494,7 @@ router.post('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next)
       }
 
       // show the edit view
-      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req),userName: UserName(req)});
+      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
   });
  
      
@@ -572,7 +571,7 @@ router.post('/:id',AuthGuard, (req, res, next) => {
       }
 
       // show the edit view
-      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req),userName: UserName(req)});
+      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
   });
  
      

@@ -98,9 +98,7 @@
                     <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
                     <!-- ------------------------ -->
                     <% if(displayName) { %>
-                    <% if(userName === tournaments.UserName) { %>
                     <td class="text-center"><a href="/tournaments/<%= tournaments._id %>/four/<%= tournaments.PlayerSeven %>/<%= tournaments.PlayerEight %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
-                    <% } %>
                     <% } %>
                   </td>
                   <% } %>
@@ -142,9 +140,7 @@
                     <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
                     <!-- ------------------------ -->
                     <% if(displayName) { %>
-                    <% if(userName === tournaments.UserName) { %>
                     <td class="text-center"><a href="/tournaments/<%= tournaments._id %>/five/<%= tournaments.WinnerFirstQuarterFinal %>/<%= tournaments.WinnerSecondQuarterFinal %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
-                    <% } %>
                     <% } %>
                      <% } %>
                   </td>
@@ -165,9 +161,7 @@
                     <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
                     <!-- ------------------------ -->
                     <% if(displayName) { %>
-                    <% if(userName === tournaments.UserName) { %>
                     <td class="text-center"><a href="/tournaments/<%= tournaments._id %>/six/<%= tournaments.WinnerThirdQuarterFinal %>/<%= tournaments.WinnerFourthQuarterFinal %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
-                    <% } %>
                     <% } %>
                     <% } %>
                   </td>
@@ -211,9 +205,7 @@
                     <!-- EDIT BUTTON HAS BEEN ADDED HERE -->
                     <!-- ------------------------ -->
                     <% if(displayName) { %>
-                    <% if(userName === tournaments.UserName) { %>
                     <td class="text-center"><a href="/tournaments/<%= tournaments._id %>/seven/<%= tournaments.WinnerFirstSemiFinal %>/<%= tournaments.WinnerSecondSemiFinal %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
-                    <% } %>
                     <% } %>
                     <% } %>
                   </td>
@@ -254,9 +246,7 @@
                     <!-- ------------------------ -->
                     <i class="fa fa-check-square-o"></i> 
                     <% if(displayName) { %>
-                    <% if(userName === tournaments.UserName) { %>
                     <button type="submit"  class="btn btn-primary"><a href="/tournaments/<%= tournaments._id %>/eight/eight/<%= tournaments.WinnerFinal %> %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Complete the tournament</a></button>
-                    <% } %>
                     <% } %>
                   </td>
                  <% } %> 
@@ -269,9 +259,7 @@
                
                     <i class="fa fa-check-square-o"></i> 
                     <% if(displayName) { %>
-                    <% if(userName === tournaments.UserName) { %>
                     <td class="text-center"><a href="/tournaments/<%= tournaments._id %>/activate" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i>Activate Tournament</a></td>
-                    <% } %>
                     <% } %>
                   </td>
                  <% } %> 
