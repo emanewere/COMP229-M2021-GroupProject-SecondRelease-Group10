@@ -21,14 +21,12 @@ import User from '../Models/user';
 
 // import Util functions
 import { UserDisplayName } from '../Util';
-
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
   res.render('content/index', {
     title: 'Home',
     page: 'home',
-    tournaments: '',
-    displayName: UserDisplayName(req)
+    tournaments: ''
    });
 });
 
@@ -36,7 +34,7 @@ router.get('/', (req, res, next) => {
 router.get('/login', (req, res, next) => {
    if(!req.user)
     {
-        return res.render('content/index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) });
+        return res.render('content/index', { title: 'Login', page: 'login', messages: req.flash('loginMessage') });
     }
 
     return res.redirect('/');
@@ -79,7 +77,7 @@ router.post('/login', (req, res, next) => {
 router.get('/register', (req, res, next) => {
    if(!req.user)
     {
-        return res.render('content/index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req) });
+        return res.render('content/index', { title: 'Register', page: 'register', messages: req.flash('registerMessage') });
     }
     return res.redirect('/');
  });

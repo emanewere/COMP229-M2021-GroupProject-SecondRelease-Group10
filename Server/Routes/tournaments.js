@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 exports.default = router;
 const tournaments_1 = __importDefault(require("../Models/tournaments"));
+const Util_1 = require("../Util");
 router.get('/', (req, res, next) => {
     tournaments_1.default.find((err, tournaments) => {
         if (err) {
@@ -16,7 +17,8 @@ router.get('/', (req, res, next) => {
             res.render('tournaments/index', {
                 title: 'Tournaments',
                 page: 'tournaments',
-                tournaments: tournaments
+                tournaments: tournaments,
+                displayName: Util_1.UserDisplayName(req)
             });
         }
     });
@@ -30,13 +32,14 @@ router.get('/landing', (req, res, next) => {
             res.render('tournaments/landing', {
                 title: 'Tournaments',
                 page: 'tournaments',
-                tournaments: tournaments
+                tournaments: tournaments,
+                displayName: Util_1.UserDisplayName(req)
             });
         }
     });
 });
 router.get('/add', (req, res, next) => {
-    res.render('tournaments/details', { title: 'Createatournament', page: 'details', tournaments: '' });
+    res.render('tournaments/details', { title: 'Createatournament', page: 'details', tournaments: '', displayName: Util_1.UserDisplayName(req) });
 });
 router.post('/add', (req, res, next) => {
     let newTournament = new tournaments_1.default({
@@ -69,10 +72,10 @@ router.get('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
             res.end(err);
         }
         if (match === "eight") {
-            res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit });
+            res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
         }
         else {
-            res.render('tournaments/bracketsEditOne', { title: 'Bracketfortournament', page: 'bracketsEditOne', tournaments: tournamentItemToEdit });
+            res.render('tournaments/bracketsEditOne', { title: 'Bracketfortournament', page: 'bracketsEditOne', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
         }
     });
 });
@@ -83,7 +86,7 @@ router.get('/:id/activate', (req, res, next) => {
             console.error(err);
             res.end(err);
         }
-        res.render('tournaments/activate', { title: 'Activatetournament', page: 'activate', tournaments: tournamentItemToEdit });
+        res.render('tournaments/activate', { title: 'Activatetournament', page: 'activate', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
     });
 });
 router.post('/:id/activate', (req, res, next) => {
@@ -143,7 +146,7 @@ router.get('/:id', (req, res, next) => {
             res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit });
         }
         else {
-            res.render('tournaments/registerplayers', { title: 'Registerplayers', page: 'edit', tournaments: tournamentItemToEdit });
+            res.render('tournaments/registerplayers', { title: 'Registerplayers', page: 'edit', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
         }
     });
 });
@@ -263,7 +266,7 @@ router.post('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
                         console.error(err);
                         res.end(err);
                     }
-                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit });
+                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
                 });
             });
         }
@@ -301,7 +304,7 @@ router.post('/:id', (req, res, next) => {
                         console.error(err);
                         res.end(err);
                     }
-                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit });
+                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
                 });
             });
         }

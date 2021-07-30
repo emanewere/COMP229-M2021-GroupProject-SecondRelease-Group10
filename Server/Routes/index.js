@@ -8,16 +8,18 @@ const router = express_1.default.Router();
 exports.default = router;
 const passport_1 = __importDefault(require("passport"));
 const user_1 = __importDefault(require("../Models/user"));
+const Util_1 = require("../Util");
 router.get('/', (req, res, next) => {
     res.render('content/index', {
         title: 'Home',
         page: 'home',
-        tournaments: ''
+        tournaments: '',
+        displayName: Util_1.UserDisplayName(req)
     });
 });
 router.get('/login', (req, res, next) => {
     if (!req.user) {
-        return res.render('content/index', { title: 'Login', page: 'login', messages: req.flash('loginMessage') });
+        return res.render('content/index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: Util_1.UserDisplayName(req) });
     }
     return res.redirect('/');
 });
@@ -42,7 +44,7 @@ router.post('/login', (req, res, next) => {
 });
 router.get('/register', (req, res, next) => {
     if (!req.user) {
-        return res.render('content/index', { title: 'Register', page: 'register', messages: req.flash('registerMessage') });
+        return res.render('content/index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: Util_1.UserDisplayName(req) });
     }
     return res.redirect('/');
 });
