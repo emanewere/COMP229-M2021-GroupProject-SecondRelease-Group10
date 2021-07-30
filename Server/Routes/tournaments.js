@@ -8,7 +8,7 @@ const router = express_1.default.Router();
 exports.default = router;
 const tournaments_1 = __importDefault(require("../Models/tournaments"));
 const Util_1 = require("../Util");
-router.get('/', (req, res, next) => {
+router.get('/', Util_1.AuthGuard, (req, res, next) => {
     tournaments_1.default.find((err, tournaments) => {
         if (err) {
             return console.error(err);

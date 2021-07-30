@@ -17,7 +17,7 @@ import tournament from '../Models/tournaments';
 import { UserDisplayName, AuthGuard, UserName} from '../Util';
 
 /* GET tournaments List page. READ */
-router.get('/',AuthGuard, (req, res, next) => 
+router.get('/',AuthGuard (req, res, next) => 
 {
   // find all tournaments in the tournaments collection
   tournament.find( (err, tournaments) => {
