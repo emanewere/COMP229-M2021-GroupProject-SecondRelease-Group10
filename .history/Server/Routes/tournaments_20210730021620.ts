@@ -74,7 +74,7 @@ router.get('/add',AuthGuard,(req, res, next) => {
 
 
 // POST process the Tournament Details page and create a new Tournament - CREATE
-router.post('/add',AuthGuard, (req, res, next) => {
+router.post('/add', (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *
@@ -110,7 +110,7 @@ router.post('/add',AuthGuard, (req, res, next) => {
 });
 
 // GET the Tournament brackets edit page in order to edit an existing Tournament
-router.get('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next) => {
+router.get('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *
@@ -149,7 +149,7 @@ router.get('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next) 
 
 
 // GET the Tournament Details page in order to activate an existing Tournament
-router.get('/:id/activate',AuthGuard, (req, res, next) => {
+router.get('/:id/activate', (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *
@@ -172,7 +172,7 @@ router.get('/:id/activate',AuthGuard, (req, res, next) => {
    });
 });
 // POST - process the information passed to activate a tournament
-router.post('/:id/activate',AuthGuard, (req, res, next) => {
+router.post('/:id/activate', (req, res, next) => {
 
   /*****************
     * APPROPRIATE CODE ADDED HERE *
@@ -257,7 +257,7 @@ router.post('/:id/activate',AuthGuard, (req, res, next) => {
 });
 
 // GET the Tournament Details page in order to edit an existing Tournament
-router.get('/:id',AuthGuard, (req, res, next) => {
+router.get('/:id', (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *
@@ -289,7 +289,7 @@ router.get('/:id',AuthGuard, (req, res, next) => {
 });
 
 // POST - process the information passed from the bracket activities
-router.post('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next) => {
+router.post('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
 
   /*****************
     * APPROPRIATE CODE ADDED HERE *
@@ -513,7 +513,7 @@ router.post('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next)
 
 
 // POST - process the information passed from the details form and update the document
-router.post('/:id',AuthGuard, (req, res, next) => {
+router.post('/:id', (req, res, next) => {
 
   /*****************
     * APPROPRIATE CODE ADDED HERE *
@@ -588,7 +588,7 @@ router.post('/:id',AuthGuard, (req, res, next) => {
 
 
 // GET - process the delete by user id
-router.get('/delete/:id',AuthGuard, (req, res, next) => {
+router.get('/delete/:id', (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *

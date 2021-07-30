@@ -38,10 +38,10 @@ router.get('/landing', (req, res, next) => {
         }
     });
 });
-router.get('/add', (req, res, next) => {
+router.get('/add', Util_1.AuthGuard, (req, res, next) => {
     res.render('tournaments/details', { title: 'Createatournament', page: 'details', tournaments: '', displayName: Util_1.UserDisplayName(req) });
 });
-router.post('/add', (req, res, next) => {
+router.post('/add', Util_1.AuthGuard, (req, res, next) => {
     let newTournament = new tournaments_1.default({
         "Name": req.body.name,
         "StartDate": req.body.startdate,
@@ -63,7 +63,7 @@ router.post('/add', (req, res, next) => {
         res.redirect('/tournaments');
     });
 });
-router.get('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
+router.get('/:id/:match/:firstplayer/:secondplayer', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     let match = req.params.match;
     tournaments_1.default.findById(id, {}, {}, (err, tournamentItemToEdit) => {
@@ -79,7 +79,7 @@ router.get('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
         }
     });
 });
-router.get('/:id/activate', (req, res, next) => {
+router.get('/:id/activate', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     tournaments_1.default.findById(id, {}, {}, (err, tournamentItemToEdit) => {
         if (err) {
@@ -89,7 +89,7 @@ router.get('/:id/activate', (req, res, next) => {
         res.render('tournaments/activate', { title: 'Activatetournament', page: 'activate', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
     });
 });
-router.post('/:id/activate', (req, res, next) => {
+router.post('/:id/activate', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     tournaments_1.default.findById(id, {}, {}, (err, tournamentItemToEdit) => {
         if (err) {
@@ -135,7 +135,7 @@ router.post('/:id/activate', (req, res, next) => {
         }
     });
 });
-router.get('/:id', (req, res, next) => {
+router.get('/:id', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     tournaments_1.default.findById(id, {}, {}, (err, tournamentItemToEdit) => {
         if (err) {
@@ -150,7 +150,7 @@ router.get('/:id', (req, res, next) => {
         }
     });
 });
-router.post('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
+router.post('/:id/:match/:firstplayer/:secondplayer', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     let firstPlayer = req.params.firstplayer;
     let secondPlayer = req.params.secondplayer;
@@ -272,7 +272,7 @@ router.post('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
         }
     });
 });
-router.post('/:id', (req, res, next) => {
+router.post('/:id', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     tournaments_1.default.findById(id, {}, {}, (err, tournamentItemToEdit) => {
         if (err) {
@@ -310,7 +310,7 @@ router.post('/:id', (req, res, next) => {
         }
     });
 });
-router.get('/delete/:id', (req, res, next) => {
+router.get('/delete/:id', Util_1.AuthGuard, (req, res, next) => {
     let id = req.params.id;
     tournaments_1.default.remove({ _id: id }, (err) => {
         if (err) {
