@@ -9,15 +9,11 @@
 import express from 'express';
 const router = express.Router();
 export default router;
-import passport from 'passport';
 
 import mongoose from 'mongoose';
 
 // define the tournament model
 import tournament from '../Models/tournaments';
-
-// create an instance of the User model
-import User from '../Models/user';
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
@@ -64,7 +60,7 @@ router.post('/login', (req, res, next) => {
               return next(err);
           }
 
-          return res.redirect('/');
+          return res.redirect('/clothing-list');
 
       });
   })(req, res, next);
@@ -82,33 +78,7 @@ router.get('/register', (req, res, next) => {
 
 /* POST - process register page when user clicks Register Button */
 router.post('/register', (req, res, next) => {
-   // instantiate a new User Object
-   let newUser = new User
-   ({
-       username: req.body.username,
-       emailAddress: req.body.emailAddress,
-       displayName: req.body.FirstName + " " + req.body.LastName
-   });
-
-   User.register(newUser, req.body.password, (err) =>
-   {
-       if(err)
-       {
-           console.error('Error: Inserting New User');
-           if(err.name == "UserExistsError")
-           {
-               console.error('Error: User Already Exists');
-           }
-           req.flash('registerMessage', 'Registration Error');
-
-           return res.redirect('/register');
-       }
-
-       // after successful registration - login the user
-       return passport.authenticate('local')(req, res, () =>{
-           return res.redirect('/');
-       });
-   });
+   
  });
 
 /* GET - process the logout page - with /logout . */
