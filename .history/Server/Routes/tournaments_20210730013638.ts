@@ -29,8 +29,7 @@ router.get('/', (req, res, next) =>
         res.render('tournaments/index', {
         title: 'Tournaments',
         page: 'tournaments',
-        tournaments: tournaments,
-        displayName: UserDisplayName(req)
+        tournaments: tournaments
       });
     }
   });
@@ -51,9 +50,7 @@ router.get('/landing', (req, res, next) =>
         res.render('tournaments/landing', {
         title: 'Tournaments',
         page: 'tournaments',
-        tournaments: tournaments, 
-        displayName: UserDisplayName(req)
-
+        tournaments: tournaments
       });
     }
   });
@@ -68,7 +65,7 @@ router.get('/add', (req, res, next) => {
    * APPROPRIATE CODE ADDED HERE *
    *****************/
   // show the edit view
-  res.render('tournaments/details', { title: 'Createatournament', page: 'details', tournaments: '', displayName: UserDisplayName(req) });
+  res.render('tournaments/details', { title: 'Createatournament', page: 'details', tournaments: '' });
 
 });
 
@@ -129,12 +126,12 @@ router.get('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
        if(match === "eight")
        {
            //Renders the edit a bracket page
-       res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
+       res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit});
        }
        else
        {
         //Renders the edit a bracket page
-       res.render('tournaments/bracketsEditOne', { title: 'Bracketfortournament', page: 'bracketsEditOne', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
+       res.render('tournaments/bracketsEditOne', { title: 'Bracketfortournament', page: 'bracketsEditOne', tournaments: tournamentItemToEdit});
        }
        
         
@@ -166,7 +163,7 @@ router.get('/:id/activate', (req, res, next) => {
        }
 
        
-        res.render('tournaments/activate', { title: 'Activatetournament', page: 'activate', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});  
+        res.render('tournaments/activate', { title: 'Activatetournament', page: 'activate', tournaments: tournamentItemToEdit});  
        
        
    });
@@ -282,7 +279,7 @@ router.get('/:id', (req, res, next) => {
 
        else
        {
-        res.render('tournaments/registerplayers', { title: 'Registerplayers', page: 'edit', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});  
+        res.render('tournaments/registerplayers', { title: 'Registerplayers', page: 'edit', tournaments: tournamentItemToEdit});  
        }
        
    });
@@ -492,7 +489,7 @@ router.post('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
       }
 
       // show the edit view
-      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
+      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit});
   });
  
      
@@ -569,7 +566,7 @@ router.post('/:id', (req, res, next) => {
       }
 
       // show the edit view
-      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: UserDisplayName(req)});
+      res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit});
   });
  
      
