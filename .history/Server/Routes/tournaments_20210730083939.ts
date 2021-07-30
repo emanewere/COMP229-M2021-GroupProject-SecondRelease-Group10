@@ -83,7 +83,7 @@ router.post('/add',AuthGuard, (req, res, next) => {
   let newTournament = new tournament
   ({
     "Name": req.body.name,
-    "UserName":UserName(req),
+    "UserName":
     "StartDate": req.body.startdate,
     "Description":req.body.briefdescription,
     "WinnerFirstQuarterFinal": "WinnerFirstQuarterFinal",

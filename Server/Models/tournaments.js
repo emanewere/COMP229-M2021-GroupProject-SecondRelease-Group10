@@ -7,6 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 const TournamentSchema = new Schema({
     Name: String,
+    UserName: String,
     StartDate: String,
     Description: String,
     PlayerOne: String,
