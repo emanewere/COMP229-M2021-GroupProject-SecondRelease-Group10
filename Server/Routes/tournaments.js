@@ -143,7 +143,7 @@ router.get('/:id', (req, res, next) => {
             res.end(err);
         }
         if (tournamentItemToEdit.IsSet === "TRUE") {
-            res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit });
+            res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
         }
         else {
             res.render('tournaments/registerplayers', { title: 'Registerplayers', page: 'edit', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
