@@ -2,7 +2,7 @@
  * Module dependencies.
  *  File name: tournaments.ts, 
     Author's: Ofovwe Ewere,Gagandeep Kaur,  Qiuqi Lu, Duy Hieu Nguyen, Farishta Sultani
-    Web App name: The Favorite Tournament List App second release 
+    Web App name: The Favorite Tournament List App first release 
     Description: The database model for tournament bracket app
     Date: July 30, 2021
  */

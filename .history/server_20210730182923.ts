@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  *  File name: server.ts, 
-    Author's:  Ofovwe Ewere,Gagandeep Kaur,  Qiuqi Lu, Duy Hieu Nguyen, Farishta Sultani
+    Author's name: Ofovwe Ewere
     Student's id: 301188196
     Web App name: The Favorite Book List App
     Date: July 30, 2021
