@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
 router.get('/login', (req, res, next) => {
    if(!req.user)
     {
-        return res.render('content/index', { title: 'Login', page: 'login', messages: req.flash('loginMessage') });
+        return res.render('content/login', { title: 'Login', page: 'login', messages: req.flash('loginMessage') });
     }
 
     //return res.redirect('/clothing-list');
