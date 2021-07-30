@@ -13,4 +13,17 @@ router.get('/', (req, res, next) => {
         tournaments: ''
     });
 });
+router.get('/login', (req, res, next) => {
+    if (!req.user) {
+        return res.render('content/index', { title: 'Login', page: 'login', messages: req.flash('loginMessage') });
+    }
+});
+router.post('/login', (req, res, next) => {
+});
+router.get('/register', (req, res, next) => {
+});
+router.post('/register', (req, res, next) => {
+});
+router.get('/logout', (req, res, next) => {
+});
 //# sourceMappingURL=index.js.map

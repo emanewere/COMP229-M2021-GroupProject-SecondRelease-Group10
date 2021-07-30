@@ -19,7 +19,7 @@ import tournament from '../Models/tournaments';
 router.get('/', (req, res, next) => {
   res.render('content/index', {
     title: 'Home',
-    page: 'home',
+    page: 'index',
     tournaments: ''
    });
 });
