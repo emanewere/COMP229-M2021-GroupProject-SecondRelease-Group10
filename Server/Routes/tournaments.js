@@ -18,7 +18,8 @@ router.get('/', (req, res, next) => {
                 title: 'Tournaments',
                 page: 'tournaments',
                 tournaments: tournaments,
-                displayName: Util_1.UserDisplayName(req)
+                displayName: Util_1.UserDisplayName(req),
+                userName: Util_1.UserName(req)
             });
         }
     });
@@ -33,7 +34,8 @@ router.get('/landing', (req, res, next) => {
                 title: 'Tournaments',
                 page: 'tournaments',
                 tournaments: tournaments,
-                displayName: Util_1.UserDisplayName(req)
+                displayName: Util_1.UserDisplayName(req),
+                userName: Util_1.UserName(req)
             });
         }
     });
@@ -73,7 +75,7 @@ router.get('/:id/:match/:firstplayer/:secondplayer', Util_1.AuthGuard, (req, res
             res.end(err);
         }
         if (match === "eight") {
-            res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
+            res.render('tournaments/bracketsEditTwo', { title: 'Bracketfortournament', page: 'bracketsEditTwo', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req), userName: Util_1.UserName(req) });
         }
         else {
             res.render('tournaments/bracketsEditOne', { title: 'Bracketfortournament', page: 'bracketsEditOne', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
@@ -144,7 +146,7 @@ router.get('/:id', (req, res, next) => {
             res.end(err);
         }
         if (tournamentItemToEdit.IsSet === "TRUE") {
-            res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
+            res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req), userName: Util_1.UserName(req) });
         }
         else {
             res.render('tournaments/registerplayers', { title: 'Registerplayers', page: 'edit', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
@@ -267,7 +269,7 @@ router.post('/:id/:match/:firstplayer/:secondplayer', Util_1.AuthGuard, (req, re
                         console.error(err);
                         res.end(err);
                     }
-                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
+                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req), userName: Util_1.UserName(req) });
                 });
             });
         }
@@ -305,7 +307,7 @@ router.post('/:id', Util_1.AuthGuard, (req, res, next) => {
                         console.error(err);
                         res.end(err);
                     }
-                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req) });
+                    res.render('tournaments/brackets', { title: 'Bracketfortournament', page: 'brackets', tournaments: tournamentItemToEdit, displayName: Util_1.UserDisplayName(req), userName: Util_1.UserName(req) });
                 });
             });
         }
