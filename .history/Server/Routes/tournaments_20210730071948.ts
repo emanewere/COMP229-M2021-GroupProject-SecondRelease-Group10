@@ -110,7 +110,7 @@ router.post('/add',AuthGuard, (req, res, next) => {
 });
 
 // GET the Tournament brackets edit page in order to edit an existing Tournament
-router.get('/:id/:match/:firstplayer/:secondplayer',AuthGuard, (req, res, next) => {
+router.get('/:id/:match/:firstplayer/:secondplayer', (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *
@@ -256,8 +256,8 @@ router.post('/:id/activate',AuthGuard, (req, res, next) => {
 
 });
 
-// GET the Tournament Details page in order to edit or view an existing Tournament
-router.get('/:id', (req, res, next) => {
+// GET the Tournament Details page in order to edit an existing Tournament
+router.get('/:id',AuthGuard, (req, res, next) => {
 
   /*****************
    * APPROPRIATE CODE ADDED HERE *
