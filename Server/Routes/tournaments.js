@@ -135,7 +135,7 @@ router.post('/:id/activate', Util_1.AuthGuard, (req, res, next) => {
         }
     });
 });
-router.get('/:id', Util_1.AuthGuard, (req, res, next) => {
+router.get('/:id', (req, res, next) => {
     let id = req.params.id;
     tournaments_1.default.findById(id, {}, {}, (err, tournamentItemToEdit) => {
         if (err) {

@@ -8,12 +8,12 @@
           <h1><%= title %></h1>
             <form class="form" method="post">
               
-              
+              <% if(displayName) { %>
               <div class="form-group">
                 <label for="PlayerTwoTextField">Please confirm activation submission</label>
                 
               </div>
-              
+               <% } %>
               
               
               <button type="submit"  class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
