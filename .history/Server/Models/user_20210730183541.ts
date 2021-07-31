@@ -1,4 +1,4 @@
- 
+ Ofovwe Ewere,Gagandeep Kaur,  Qiuqi Lu, Duy Hieu Nguyen, Farishta Sultani
 /**
  * Module dependencies.
  *  File name: user.ts, 

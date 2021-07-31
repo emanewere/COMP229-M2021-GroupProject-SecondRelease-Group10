@@ -1,7 +1,7 @@
 /*
   Module dependencies.
    File name: app.ts, 
-    Author's name: Ofovwe Ewere,Gagandeep Kaur,  Qiuqi Lu, Duy Hieu Nguyen, Farishta Sultani
+    Author's name: Ofovwe Ewere
     Student's id: 301188196
     Web App name: The Tournament bracket App
     Date: July 30, 2021
